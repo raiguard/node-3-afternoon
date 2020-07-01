@@ -7,5 +7,5 @@ insert into product (
   ${name},
   ${description},
   ${price},
-  ${imageUrl}
+  ${image_url}
 );

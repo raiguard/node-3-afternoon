@@ -1,8 +1,8 @@
 module.exports = {
   create: (req, res) => {
     const db = req.app.get("db");
-    const { name, description, price, imageUrl } = req.body;
-    db.create_product({ name, description, price, imageUrl })
+    const { name, description, price, image_url } = req.body;
+    db.create_product({ name, description, price, image_url })
       .then(() => res.sendStatus(200))
       .catch((err) => res.status(500).send(err));
   },
@@ -22,8 +22,8 @@ module.exports = {
   update: (req, res) => {
     const db = req.app.get("db");
     const { id } = req.params;
-    const { description } = req.body;
-    db.update_product({ id, description })
+    const { desc } = req.query;
+    db.update_product({ id, desc })
       .then(() => res.sendStatus(200))
       .catch((err) => res.status(500).send(err));
   },
